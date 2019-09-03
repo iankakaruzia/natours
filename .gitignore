@@ -1,2 +1,9 @@
 /node_modules
 config.env
+
+/.cache
+
+/public.js
+
+/public/js/bundle.js
+/public/js/bundle.js.map
