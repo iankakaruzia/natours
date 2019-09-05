@@ -21,7 +21,7 @@ mongoose
   })
   .then(() => {
     // eslint-disable-next-line no-console
-    console.log('DB connection successful!');
+    //console.log('DB connection successful!');
   });
 
 const tours = JSON.parse(fs.readFileSync(`${__dirname}/tours.json`, 'utf-8'));
@@ -35,9 +35,9 @@ const importData = async () => {
     await Tour.create(tours);
     await User.create(users, { validateBeforeSave: false });
     await Review.create(reviews);
-    console.log('Data successfully loaded!');
+    //console.log('Data successfully loaded!');
   } catch (err) {
-    console.log(err);
+    //console.log(err);
   }
 };
 
@@ -46,9 +46,9 @@ const deleteData = async () => {
     await Tour.deleteMany();
     await User.deleteMany();
     await Review.deleteMany();
-    console.log('Data successfully deleted!');
+    //console.log('Data successfully deleted!');
   } catch (err) {
-    console.log(err);
+    //console.log(err);
   }
 };
 
@@ -58,4 +58,4 @@ if (process.argv[2] === '--import') {
   deleteData();
 }
 
-console.log(process.argv);
+//console.log(process.argv);

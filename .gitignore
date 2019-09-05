@@ -2,5 +2,3 @@
 config.env
 
 /.cache
-
-/public.js
