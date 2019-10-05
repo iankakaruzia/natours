@@ -31,6 +31,7 @@ app.use(cors());
 app.options('*', cors());
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images', express.static(path.join(__dirname, 'public', 'img')));
 
 // Set security HTTP headers
 app.use(helmet());
@@ -42,7 +43,7 @@ if (process.env.NODE_ENV === 'development') {
 
 // Limit request from same API
 const limiter = rateLimit({
-  max: 100,
+  max: 1000,
   windowMs: 60 * 60 * 1000,
   message: 'Too many requests from this IP, please try again in an hour!'
 });

@@ -120,6 +120,16 @@ tourSchema.virtual('durationWeeks').get(function() {
   return this.duration / 7;
 });
 
+tourSchema.virtual('cover_url').get(function() {
+  return `http://localhost:3003/images/tours/${this.imageCover}`;
+});
+
+tourSchema.virtual('images_url').get(function() {
+  return this.images.map(
+    image => `http://localhost:3003/images/tours/${image}`
+  );
+});
+
 tourSchema.virtual('reviews', {
   ref: 'Review',
   foreignField: 'tour',
