@@ -48,4 +48,4 @@ process.on('SIGTERM', () => {
     // eslint-disable-next-line no-console
     console.log('Process terminated');
   });
-})
+});
